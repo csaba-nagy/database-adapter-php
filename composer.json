@@ -1,0 +1,18 @@
+{
+    "name": "csaba-nagy/database-adapter-php",
+    "description": "Database Adapter for PHP API services",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "CsabaNagy\\DatabaseAdapterPhp\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Csaba Nagy",
+            "email": "n.csaba1991@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {}
+}
