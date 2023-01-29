@@ -7,7 +7,14 @@ This package is using environment variables, once you import this package, be su
 The required environment variables are included in the `.env.example` file or the list below.
 The `.env` file can be copied with the `cp .env.example .env` command.
 
-***Required environment variables:*** DB_DRIVER, DB_HOST, DB_PORT, DB_NAME, DB_USERNAME, DB_PASSWORD, DB_CHARSET
+***Required environment variables:***
+- DB_DRIVER
+- DB_HOST
+- DB_PORT
+- DB_NAME
+- DB_USERNAME
+- DB_PASSWORD
+- DB_CHARSET
 
 ## Basic Usage:
 
@@ -91,4 +98,4 @@ It returns the last created id as an integer. If the `lastInsertId` method canno
 ```
 
 ## Credit
-All credit to @nandordudas
+All credit to [@nandordudas](https://github.com/nandordudas)
