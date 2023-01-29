@@ -2,6 +2,7 @@
     "name": "csaba-nagy/database-adapter-php",
     "description": "Database Adapter for PHP API services",
     "license": "MIT",
+    "version": "0.1.0",
     "autoload": {
         "psr-4": {
             "DatabaseAdapterPhp\\": "src/"
