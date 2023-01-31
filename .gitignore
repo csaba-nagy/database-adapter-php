@@ -1,2 +1,5 @@
 .env
-vendor/
+*.cache
+
+.vscode
+vendor
