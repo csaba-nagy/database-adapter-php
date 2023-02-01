@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace DatabaseAdapterPhp\Abstracts;
+namespace DatabaseAdapterPhp\Abstractions;
 
 use DatabaseAdapterPhp\Contracts\Connectable;
 use DatabaseAdapterPhp\Enums\DatabaseDriver;

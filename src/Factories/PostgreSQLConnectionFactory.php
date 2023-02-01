@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace DatabaseAdapterPhp\Factories;
 
-use DatabaseAdapterPhp\Abstracts\AbstractDatabaseFactory;
+use DatabaseAdapterPhp\Abstractions\AbstractDatabaseFactory;
 use DatabaseAdapterPhp\Enums\DatabaseDriver;
 use DatabaseAdapterPhp\Models\PostgreSQLConnector;
 

@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace DatabaseAdapterPhp\Models;
 
-use DatabaseAdapterPhp\Abstracts\AbstractDatabaseConnector;
+use DatabaseAdapterPhp\Abstractions\AbstractDatabaseConnector;
 use DatabaseAdapterPhp\Enums\DatabaseDriver;
 
 class MySQLConnector extends AbstractDatabaseConnector
