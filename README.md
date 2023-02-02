@@ -151,6 +151,6 @@ If none of the rows are affected, it returns 0.
 It returns the last created id as an integer.
 
 ```php
-  var_dump($sdb->lastInsertId());
+  var_dump($sdb->getLastInsertedId());
 
   ```
