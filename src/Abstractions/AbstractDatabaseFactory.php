@@ -6,5 +6,5 @@ namespace DatabaseAdapterPhp\Abstractions;
 
 abstract class AbstractDatabaseFactory
 {
-    abstract protected static function create(?array $values = null): AbstractDatabaseConnector;
+    abstract protected static function create(?array $values = null, ?array $pdoOptions = null): AbstractDatabaseConnector;
 }

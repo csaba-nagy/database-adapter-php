@@ -10,10 +10,10 @@ use DatabaseAdapterPhp\Models\PostgreSQLConnector;
 
 class PostgreSQLConnectionFactory extends AbstractDatabaseFactory
 {
-  public static function create(?array $values = null): PostgreSQLConnector
-  {
+    public static function create(?array $values = null, ?array $pdoOptions = null): PostgreSQLConnector
+    {
     $dsn = PostgreSQLConnector::getDsn(DatabaseDriver::POSTGRESQL, $values);
 
     return new PostgreSQLConnector($dsn);
-  }
+    }
 }

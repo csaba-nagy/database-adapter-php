@@ -10,10 +10,10 @@ use DatabaseAdapterPhp\Models\MySQLConnector;
 
 class MySQLConnectionFactory extends AbstractDatabaseFactory
 {
-  public static function create(?array $values = null): MySQLConnector
+    public static function create(?array $values = null, ?array $pdoOptions = null): MySQLConnector
   {
     $dsn = MySQLConnector::getDsn(DatabaseDriver::MYSQL, $values);
 
-    return new MySQLConnector($dsn);
+        return new MySQLConnector($dsn, $pdoOptions);
   }
 }
