@@ -9,8 +9,8 @@ use DatabaseAdapterPhp\Enums\DatabaseDriver;
 
 class MySQLConnector extends AbstractDatabaseConnector
 {
-  public static function getDsn(DatabaseDriver $driver, array $values): string
-  {
+    public static function getDsn(DatabaseDriver $driver, array $values = null): string
+    {
     $format = '%s:host=%s;port=%d;dbname=%s;user=%s;password=%s;charset=%s';
 
     $values = [
