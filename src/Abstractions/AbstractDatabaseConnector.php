@@ -23,7 +23,7 @@ abstract class AbstractDatabaseConnector implements Connectable
 
     public function __construct(string $dsn, ?array $options = null)
     {
-        $this->pdo = new PDO($dsn, null, null, $options ?? $this::PDO_OPTIONS);
+        $this->pdo = new PDO($dsn, null, null, $options ?? self::PDO_OPTIONS);
     }
 
     abstract public static function getDsn(DatabaseDriver $driver, array $values);
