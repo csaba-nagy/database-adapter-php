@@ -38,21 +38,21 @@ By default, connection factories are using the following connection data:
 **MySQLConnectionFactory**
 ```  php
 'host' => 'mariadb',
-'port => 3306,
-'dbname => 'mariadb',
-'user => 'mariadb',
-'password => 'mariadb',
-'charset => 'utf8mb4'
+'port' => 3306,
+'dbname' => 'mariadb',
+'user' => 'mariadb',
+'password' => 'mariadb',
+'charset' => 'utf8mb4'
 ```
 
 **PostgreSQLConnectionFactory**
 ```php
-'host => 'postgres',
-'port => 5432,
-'dbname => 'postgres',
-'user => 'postgres',
-'password => 'postgres',
-'client_encoding => 'utf8'
+'host' => 'postgres',
+'port' => 5432,
+'dbname' => 'postgres',
+'user' => 'postgres',
+'password' => 'postgres',
+'client_encoding' => 'utf8'
 ```
 
 If you want to change these, you can add your custom data as an associative array to the `*ConnectionFactory::create` method:
@@ -130,9 +130,10 @@ To run the prepared query, you can use the execute method.
 
 ### fetchAll(): ?array
 It extends the PDO fetchAll() method. It returns with the fetched data as an array.
+Note that, the fetchAll method calls the execute method automatically.
 
 ```php
-  $result = $db->prepare($query)->execute()?->fetchAll();
+  $result = $db->prepare($query)->fetchAll();
 
 ```
 
