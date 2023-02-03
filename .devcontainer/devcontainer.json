@@ -1,22 +1,60 @@
-// For format details, see https://aka.ms/devcontainer.json. For config options, see the
-// README at: https://github.com/devcontainers/templates/tree/main/src/php
 {
-	"name": "PHP",
-	// Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
-	"image": "mcr.microsoft.com/devcontainers/php:0-8.2",
-
-	// Features to add to the dev container. More info: https://containers.dev/features.
-	// "features": {},
-
-	// Configure tool-specific properties.
-	// "customizations": {},
-
-	// Use 'forwardPorts' to make a list of ports inside the container available locally.
-	"forwardPorts": [8080]
-
-	// Use 'postCreateCommand' to run commands after the container is created.
-	// "postCreateCommand": "sudo chmod a+x \"$(pwd)\" && sudo rm -rf /var/www/html && sudo ln -s \"$(pwd)\" /var/www/html"
-
-	// Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
-	// "remoteUser": "root"
+  "name": "PHP & MariaDB",
+  "dockerComposeFile": "docker-compose.yml",
+  "service": "app",
+  "workspaceFolder": "/workspace",
+  "features": {
+    "ghcr.io/devcontainers-contrib/features/zsh-plugins:latest": {
+      "plugins": "git F-Sy-H",
+      "omzPlugins": "https://github.com/z-shell/F-Sy-H"
+    },
+    "ghcr.io/stuartleeks/dev-container-features/shell-history:latest": {}
+  },
+  "forwardPorts": [
+    8080,
+    3306,
+    5432
+  ],
+  // Use 'postCreateCommand' to run commands after the container is created.
+  "postCreateCommand": {
+    "setupFolderPrivileges": "sudo chown vscode vendor",
+    "installDependencies": "composer install"
+  },
+  // Configure tool-specific properties.
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "bmewburn.vscode-intelephense-client",
+        "cweijan.vscode-database-client2",
+        "devsense.composer-php-vscode",
+        "ms-azuretools.vscode-docker",
+        "mutantdino.resourcemonitor",
+        "sonarsource.sonarlint-vscode",
+        "streetsidesoftware.code-spell-checker",
+        "usernamehw.errorlens"
+      ],
+      "settings": {
+        // #region Similar like editorconfig.editorconfig settings
+        "editor.detectIndentation": false,
+        "editor.insertSpaces": true,
+        "editor.tabSize": 4,
+        "files.encoding": "utf8",
+        "files.eol": "\n",
+        "files.insertFinalNewline": true,
+        "files.trimTrailingWhitespace": true,
+        // #endregion
+        "editor.codeActionsOnSave": {
+          "source.fixAll": true
+        },
+        "editor.formatOnSave": true,
+        "errorLens.excludeBySource": [
+          "cSpell"
+        ],
+        "errorLens.fontStyleItalic": true,
+        "errorLens.fontWeight": "100"
+      }
+    }
+  }
+  // Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
+  // "remoteUser": "root"
 }

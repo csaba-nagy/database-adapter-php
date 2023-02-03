@@ -1,0 +1,44 @@
+version: '3.9'
+
+services:
+  app:
+    build:
+      args:
+        USERNAME: vscode
+        VARIANT: 8.2
+    volumes:
+      - ..:/workspace:cached
+      - vscode-extensions:/home/vscode/.vscode-server/extensions
+      - vendor:/workspace/vendor
+    command: sleep infinity
+
+  mariadb:
+    image: mariadb:10.6
+    restart: unless-stopped
+    volumes:
+      - mariadb-data:/var/lib/mysql
+    environment:
+      MARIADB_ROOT_PASSWORD: mariadb
+      MARIADB_DATABASE: mariadb
+      MARIADB_USER: mariadb
+      MARIADB_PASSWORD: mariadb
+    ports:
+      - 127.0.0.1:3306:3306
+
+  postgres:
+    image: postgres:15.1-alpine
+    restart: unless-stopped
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+    environment:
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_USER: postgres
+      POSTGRES_DB: postgres
+    ports:
+      - 127.0.0.1:5432:5432
+
+volumes:
+  mariadb-data:
+  postgres-data:
+  vendor:
+  vscode-extensions:
