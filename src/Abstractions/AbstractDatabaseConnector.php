@@ -61,7 +61,7 @@ abstract class AbstractDatabaseConnector implements Connectable
 
     public function fetch(string $query, ?array $params = null): ?array
     {
-        return $this->prepare($query, $params)->execute()?->fetchAll();
+        return $this->prepare($query, $params)->fetchAll();
     }
 
     public function getLastInsertedId(?string $name = null): int
@@ -73,6 +73,7 @@ abstract class AbstractDatabaseConnector implements Connectable
     {
         foreach ($params as $key => $value) {
             $args = [":{$key}", $value, $this->getValueType($value)];
+
 
             if ($this->statement?->bindValue(...$args)) {
                 continue;
